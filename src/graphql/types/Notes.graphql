@@ -1,0 +1,20 @@
+type Notes {
+  id: ID
+  title: String
+  body: String
+  user: User
+}
+type Query {
+  note(noteId: ID): Notes
+}
+
+input NoteInput {
+  title: String
+  body: String
+}
+
+type Mutation {
+  addNote(note: NoteInput): Notes
+  updateNote(noteId: ID, note: NoteInput): Notes
+  deleteNote(noteId: ID): Notes
+}
